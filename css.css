@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Andale Mono, monospace;
+}
+
+.section_one{
+    background-color: #15202B;
+    color: white;
+}
+
+.section_two{
+    color:#15202B;
+}
+
+.section_three{
+    background-color: #15202B;
+    color: white;
+}
+
+.section_four{
+    color:#15202B;
+}
