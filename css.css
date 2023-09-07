@@ -57,15 +57,39 @@ h1{
 }
 
 .section_two{
+    display: flex;
+    padding: 5%;
     background-color: #15202B;
     color:white;
 }
 
-.section_two p{
+.section_two_text{
+    width:50%;
+}
+
+.section_two_text h1{
     font-size: 40px;
-    text-transform: uppercase;
-    margin-left:3%;
+    text-transform: uppercase; 
     font-weight: 700;
+    padding: 2%;
+}
+.section_two_text p{
+    padding:3%;
+    text-transform:none;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 45px;
+}
+
+.section_two_photo{
+    display:flex;
+    width: 50%;
+    justify-content:center;
+}
+.section_two_photo img{
+    width:100%;
+    border: solid 5px white;
+    border-radius: 30px;
 }
 
 .section_three{
@@ -82,6 +106,7 @@ h1{
 .section_four{
     background-color: #15202B;
     color:white;
+    padding: 5%;
 }
 
 .section_four p{
@@ -89,4 +114,18 @@ h1{
     text-transform: uppercase;
     margin-left:3%;
     font-weight: 700;
+}
+
+.section_four_progress{
+    margin-top:2%;
+}
+
+.section_four_progress progress{
+    width: 1000px;
+    height: 50px;
+}
+
+.section_four_progress label{
+    font-size: 30px;
+    font-weight: 500;
 }
