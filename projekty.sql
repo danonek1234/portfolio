@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Wrz 10, 2023 at 08:33 PM
+-- Generation Time: Wrz 12, 2023 at 07:04 PM
 -- Wersja serwera: 10.6.15-MariaDB-cll-lve
 -- Wersja PHP: 8.1.22
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `patyk_portfolio`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `omnie`
+--
+
+CREATE TABLE `omnie` (
+  `id` int(11) NOT NULL,
+  `tekst` text NOT NULL,
+  `zdjecie` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+--
+-- Dumping data for table `omnie`
+--
+
+INSERT INTO `omnie` (`id`, `tekst`, `zdjecie`) VALUES
+(1, 'Jestem uczniem 3 klasy technikum na profilu technik programista, mam na imię Oliwier. Moimi pasjami są granie w League of Legends jak i również kolekcjonowanie butów. Staram się również rozwijać jako programista. W tym roku moim celem jest wyrzeźbienie sylwetki i rozwinięcie się jako programista.\r\nbaliniak to pedal', 'IMG_3701.JPG');
 
 -- --------------------------------------------------------
 
@@ -45,6 +64,12 @@ INSERT INTO `projekty` (`id_p`, `tekst_p`, `zdjecie_p`) VALUES
 --
 
 --
+-- Indeksy dla tabeli `omnie`
+--
+ALTER TABLE `omnie`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeksy dla tabeli `projekty`
 --
 ALTER TABLE `projekty`
@@ -53,6 +78,12 @@ ALTER TABLE `projekty`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `omnie`
+--
+ALTER TABLE `omnie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `projekty`
@@ -64,3 +95,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
