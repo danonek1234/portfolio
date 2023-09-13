@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Wrz 12, 2023 at 07:04 PM
--- Wersja serwera: 10.6.15-MariaDB-cll-lve
--- Wersja PHP: 8.1.22
+-- Host: 127.0.0.1
+-- Generation Time: Wrz 13, 2023 at 08:16 PM
+-- Wersja serwera: 10.4.28-MariaDB
+-- Wersja PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,8 +18,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `patyk_portfolio`
+-- Database: `portfolio`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_a` int(11) NOT NULL,
+  `haslo` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_a`, `haslo`) VALUES
+(1, ''),
+(2, '696969');
 
 -- --------------------------------------------------------
 
@@ -31,14 +50,14 @@ CREATE TABLE `omnie` (
   `id` int(11) NOT NULL,
   `tekst` text NOT NULL,
   `zdjecie` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `omnie`
 --
 
 INSERT INTO `omnie` (`id`, `tekst`, `zdjecie`) VALUES
-(1, 'Jestem uczniem 3 klasy technikum na profilu technik programista, mam na imię Oliwier. Moimi pasjami są granie w League of Legends jak i również kolekcjonowanie butów. Staram się również rozwijać jako programista. W tym roku moim celem jest wyrzeźbienie sylwetki i rozwinięcie się jako programista.\r\nbaliniak to pedal', 'IMG_3701.JPG');
+(1, 'Witam jestem Oliwier, początkujący programista uczęszczający do CKZiU w Jaworznie. Moimi pasjami jest granie w League of Legends, kolekcjonowanie butów i wyrywanie mamy Tomasza Kania. Jestem pracowity i z chęcią podejmuje się nowych wyzwań.', 'IMG_3701.JPG');
 
 -- --------------------------------------------------------
 
@@ -50,18 +69,24 @@ CREATE TABLE `projekty` (
   `id_p` int(11) NOT NULL,
   `tekst_p` text NOT NULL,
   `zdjecie_p` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `projekty`
 --
 
 INSERT INTO `projekty` (`id_p`, `tekst_p`, `zdjecie_p`) VALUES
-(1, 'Jako iż jestem początkującym programistą nie mam zbyt dużo projektów. Jednak mogę wyróżnić jestem z nich, a mianowicie FEETER. Jest to strona stworzona jako szkolny projekt. Miała ona przypominać portal społecznościowy. Jest ona w pełni sprawna i jest wykonana w językach php/html/css', 'feeter.png');
+(1, 'Jako iż jestem początkującym programistą nie mam zbyt dużo projektów. Jednak mogę wyróżnić jeden z nich, a mianowicie FEETER. Jest to strona stworzona jako szkolny projekt. Miała ona przypominać portal społecznościowy. Jest ona w pełni sprawna i jest wykonana w językach php/html/css', 'feeter.png');
 
 --
 -- Indeksy dla zrzutów tabel
 --
+
+--
+-- Indeksy dla tabeli `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_a`);
 
 --
 -- Indeksy dla tabeli `omnie`
@@ -80,6 +105,12 @@ ALTER TABLE `projekty`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_a` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `omnie`
 --
 ALTER TABLE `omnie`
@@ -95,4 +126,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-

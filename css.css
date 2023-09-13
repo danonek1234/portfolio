@@ -21,13 +21,21 @@ h1{
 }
 
 .section_one{
-    display: flex;
     color:#15202B;
     padding: 5%;
+    display: flex;
+    flex-direction: row;
 }
 
 .section_one_text{
+    display: flex;
+    flex-direction: column;
     width:50%;
+}
+
+.section_one_text form{
+    display: flex;
+    flex-direction: column;
 }
 
 .section_one_text h1{
@@ -48,12 +56,15 @@ h1{
 }
 .section_one_photo{
     display:flex;
+    flex-direction: column;
     width: 50%;
     justify-content:center;
+    align-items: center;
 }
 .section_one_photo img{
     width:30%;
     border-radius: 100px;
+    margin-bottom: 2%;
 }
 
 .section_two{
@@ -83,6 +94,7 @@ h1{
 
 .section_two_photo{
     display:flex;
+    flex-direction: column;
     width: 50%;
     justify-content:center;
 }
@@ -99,8 +111,52 @@ h1{
 .section_three p{
     font-size: 40px;
     text-transform: uppercase;
-    margin-left:8%;
-    font-weight: 700;
+    font-weight: 700; 
+    text-align: center;
+    padding: 2%;
+}
+
+.section_three form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#email{
+    width: 20%;
+    padding: 1%;
+    font-size: 20px;
+    border: black solid 3px;
+    border-radius: 30px;
+    margin-bottom: 1%;
+}
+
+#msg{
+    width: 20%;
+    padding: 1%;
+    font-size: 20px;
+    border: black solid 3px;
+    border-radius: 30px;
+    margin-bottom: 1%;
+}
+
+#submit{
+    width: 10%;
+    padding: 1%;
+    font-size: 20px;
+    border: black solid 3px;
+    border-radius: 30px;
+    color: black;
+    background-color: white;
+    margin-bottom: 1%;
+}
+
+#submit:hover{
+    transition: 1s;
+    border: white solid 3px;
+    color: white;
+    background-color: black;
 }
 
 .section_four{
@@ -128,4 +184,158 @@ h1{
 .section_four_progress label{
     font-size: 30px;
     font-weight: 500;
+}
+
+.section_five{
+    display:flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.section_five h2{
+    font-size: 40px;
+    font-weight: 700;
+    padding: 2%;
+}
+
+#haslo{
+    width: 10%;
+    padding: 1%;
+    font-size: 20px;
+    border: black solid 3px;
+    border-radius: 30px;
+    color: black;
+    background-color: white;
+    margin-bottom: 1%;
+}
+
+.section_five form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section_five p{
+    color: red;
+    font-size: 25px;
+    margin-bottom: 2%;
+}
+
+#text{
+    min-width: 95%;
+    min-height: 400px;
+    max-width: 95%;
+    width: 95%;
+    height: 400px;
+    max-height: 400px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 45px;
+    border: solid black 5px;
+    border-radius: 12px;
+    outline: none;
+    padding: 1%;
+    margin-bottom: 2%;
+}
+
+#photo_text{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+    outline: none;
+    border: solid black 3px;
+    border-radius: 12px;
+    padding: 1%;
+    margin-bottom: 5%;
+}
+
+#submit_text{
+    width: 250px;
+    background-color: transparent;
+    border: solid black 3px;
+    padding: 2%;
+    border-radius: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#submit_text:hover{
+    transition: 1s;
+    background-color: black;
+    border: solid white 3px;
+    color: white;
+}
+
+#textp{
+    min-width: 95%;
+    min-height: 400px;
+    max-width: 95%;
+    width: 95%;
+    height: 400px;
+    max-height: 400px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 45px;
+    border: solid white 5px;
+    border-radius: 12px;
+    outline: none;
+    padding: 1%;
+    margin-bottom: 2%;
+    background-color: #15202B;
+    color: white;
+}
+
+#submit_p{
+        width: 250px;
+        background-color: transparent;
+        border: solid white 3px;
+        padding: 2%;
+        border-radius: 10px;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: white;
+}
+
+#submit_p:hover{
+    transition: 1s;
+    color: #15202B;
+    border: solid #15202B 3px;
+    background-color: white;
+}
+
+#photo_projekt{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+    outline: none;
+    background-color: transparent;
+    border: solid white 3px;
+    border-radius: 12px;
+    padding: 1%;
+    margin-bottom: 2%;
+    color: white;
+    margin-top: 2%;
+}
+
+#submit_projekt{
+    width: 250px;
+    background-color: transparent;
+    border: solid white 3px;
+    padding: 2%;
+    border-radius: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+}
+
+#submit_projekt:hover{
+    transition: 1s;
+    color: #15202B;
+    border: solid #15202B 3px;
+    background-color: white;
 }
