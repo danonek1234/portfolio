@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Wrz 13, 2023 at 08:16 PM
+-- Generation Time: Wrz 14, 2023 at 10:15 AM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -20,25 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `portfolio`
 --
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `admin`
---
-
-CREATE TABLE `admin` (
-  `id_a` int(11) NOT NULL,
-  `haslo` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`id_a`, `haslo`) VALUES
-(1, ''),
-(2, '696969');
 
 -- --------------------------------------------------------
 
@@ -78,15 +59,33 @@ CREATE TABLE `projekty` (
 INSERT INTO `projekty` (`id_p`, `tekst_p`, `zdjecie_p`) VALUES
 (1, 'Jako iż jestem początkującym programistą nie mam zbyt dużo projektów. Jednak mogę wyróżnić jeden z nich, a mianowicie FEETER. Jest to strona stworzona jako szkolny projekt. Miała ona przypominać portal społecznościowy. Jest ona w pełni sprawna i jest wykonana w językach php/html/css', 'feeter.png');
 
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `umiejetnosci`
+--
+
+CREATE TABLE `umiejetnosci` (
+  `id_u` int(11) NOT NULL,
+  `value` int(11) NOT NULL,
+  `nazwa_u` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `umiejetnosci`
+--
+
+INSERT INTO `umiejetnosci` (`id_u`, `value`, `nazwa_u`) VALUES
+(1, 95, 'HTML'),
+(2, 75, 'CSS'),
+(4, 40, 'PHP'),
+(6, 30, 'C#'),
+(11, 10, 'JS'),
+(12, 5, 'c++');
+
 --
 -- Indeksy dla zrzutów tabel
 --
-
---
--- Indeksy dla tabeli `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id_a`);
 
 --
 -- Indeksy dla tabeli `omnie`
@@ -101,14 +100,14 @@ ALTER TABLE `projekty`
   ADD PRIMARY KEY (`id_p`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indeksy dla tabeli `umiejetnosci`
 --
+ALTER TABLE `umiejetnosci`
+  ADD PRIMARY KEY (`id_u`);
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `admin`
-  MODIFY `id_a` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `omnie`
@@ -121,6 +120,12 @@ ALTER TABLE `omnie`
 --
 ALTER TABLE `projekty`
   MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `umiejetnosci`
+--
+ALTER TABLE `umiejetnosci`
+  MODIFY `id_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

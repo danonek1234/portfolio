@@ -339,3 +339,97 @@ h1{
     border: solid #15202B 3px;
     background-color: white;
 }
+
+#tekst_u {
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border: solid white 3px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#submit_u{
+    font-size: 25px;
+    background-color: transparent;
+    color: white;
+    border: solid white 3px;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#submit_u:hover{
+    transition: 1s;
+    color: #15202B;
+    border: solid #15202B 3px;
+    background-color: white;
+}
+
+#tekst_um{
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border: solid white 2px;
+    border-radius: 10px;
+    background-color: transparent;
+    margin-bottom: 1%;
+}
+
+#tekst_um::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: white;
+    cursor: pointer;
+    border: solid white 1px;
+    border-radius: 10px;
+  }
+
+#submit_um{
+    text-transform: uppercase;
+    font-size: 15px;
+    background-color: transparent;
+    color: white;
+    border: solid white 2px;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+#tekst_umi{
+    -webkit-appearance: none;
+    width: 40%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border: solid white 2px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+#tekst_umi::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: url('dick.png');
+    border-radius: 5px;
+    cursor: pointer;
+  }

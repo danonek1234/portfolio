@@ -12,6 +12,9 @@ $c = mysqli_connect($serwer, $user, $pass, $baza);
 @$id_p = $_GET["id"];
 @$tekst_p = $_POST["tekst"];
 @$zdjecie_p = $_POST["zdjecie"];
+@$value = $_POST["value"];
+@$id_u = $_POST["id_u"];
+@$nazwa_u = $_POST["nazwa_u"];
 
 if(isset($_POST['wyslij'])){
     $a = mysqli_query($c, "UPDATE `omnie` SET `tekst` = '$tekst';");
@@ -32,6 +35,16 @@ if(isset($_POST['wyslijp'])){
 if(isset($_POST['wyloguj'])){
     header("Location: strona.php");
 }
+
+if(isset($_POST['submit_u'])){
+    $a = mysqli_query($c, "UPDATE `umiejetnosci` SET `value` = '$value' WHERE `id_u` = '$id_u';");
+    header("Location: admin.php");
+    }
+
+if(isset($_POST['submit_um'])){
+    $a = mysqli_query($c, "INSERT INTO `umiejetnosci` SET `value` = '$value', `nazwa_u` = '$nazwa_u';");
+    header("Location: admin.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,7 +88,7 @@ if(isset($_POST['wyloguj'])){
                 echo "<form method='post'>";
                 echo "<textarea type='text' id='textp' name='tekst' placeholder='$g[tekst_p]'></textarea>";
                 echo "<input id='submit_p' type='submit' name='submitp' value='wyslij'>";
-                echo "</form>";  
+                echo "</form>"; 
             echo "</div>";
             echo "<div class='section_two_photo'>";
             echo "<img src=\"" . $g["zdjecie_p"] . "\";>";
@@ -98,13 +111,44 @@ if(isset($_POST['wyloguj'])){
     <div class="section_four">
         <p>Moje umiejętności</p>
         <div class="section_four_progress">
-        <label for="file">HTML:</label>
-        <progress id="file" max="100" value="70"></progress><h2>70%</h2>
+        <?php
+            $n = mysqli_query($c, "SELECT * FROM `umiejetnosci`;");
+            while($l = mysqli_fetch_array($n)){
+                echo "<form method='post'>";
+                echo "<input type='hidden' name='id_u' value='" . $l["id_u"] . "'>";
+                echo "<label>" . $l["nazwa_u"] . "</label>";
+                echo "<input id='tekst_um' type='range' name='value' min='0' max='100' step='5' value='" . $l["value"] . "'>";
+                echo "<input id='submit_um' type='submit' name='submit_u' value='edytuj'>";
+                echo "</form>";
+            }
+        ?>
+        <div class="formularz">
+        <form method="post">
+            <label>Dodaj nową umiejętność</label>
+            <input id="tekst_u" type="text" name="nazwa_u">
+            <input id="tekst_umi" type="range" name="value" min="0" max="100" step="5">
+                        <audio id="audio" src="amogus.mp3"></audio>
+            <script>
+                var audio = document.getElementById("audio");
+                var img = document.getElementById("tekst_umi");
+                
+                function play() {
+                audio.play();
+                }
+                
+                function stop() {
+                audio.pause();
+                }
+                
+                img.addEventListener('click', play);
+                img.addEventListener('mouseover', play);
+                img.addEventListener('mouseout', stop);
+            </script>
+            <input id="submit_u" type="submit" name="submit_um" value="dodaj">
+
+        </form>
         </div>
-        <div class="section_four_progress">
-        <label for="file">CSS:</label>
-        <progress id="file" max="100" value="50"></progress><h2>50%</h2>
-    </div>
+        </div>
     </div>
     <div class="section_five">
         <h2>Panel Admina</h2>

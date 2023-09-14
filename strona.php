@@ -11,6 +11,8 @@ $c = mysqli_connect($serwer, $user, $pass, $baza);
 @$id_p = $_GET["id"];
 @$tekst_p = $_POST["tekst"];
 @$zdjecie_p = $_POST["zdjecie"];
+@$id_u = $_GET["id_u"];
+@$value = $_GET["value"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,13 +65,13 @@ $c = mysqli_connect($serwer, $user, $pass, $baza);
     <div class="section_four">
         <p>Moje umiejętności</p>
         <div class="section_four_progress">
-        <label for="file">HTML:</label>
-        <progress id="file" max="100" value="70"></progress><h2>70%</h2>
-        </div>
-        <div class="section_four_progress">
-        <label for="file">CSS:</label>
-        <progress id="file" max="100" value="50"></progress><h2>50%</h2>
-    </div>
+        <?php
+        $f = mysqli_query($c, "SELECT * FROM `umiejetnosci`;");
+            while($o = mysqli_fetch_array($f)){
+        echo "<label for='file'> " . $o["nazwa_u"] . "</label>";
+        echo "<progress id='file' max='100' value='" . $o["value"] . "'></progress><h2>" . $o["value"] . "</h2>";
+            }
+    ?>
     </div>
     <div class="section_five">
         <h2>Panel Admina</h2>
